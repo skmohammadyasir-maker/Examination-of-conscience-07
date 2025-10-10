@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Black Force 007 — Quiz</title>
+
+  <!-- Noto Sans Bengali -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <h1 class="title">Black Force 007</h1>
+      <div class="top-right">
+        <div class="stat small">প্রশ্ন: <span id="qTotal">0</span></div>
+        <div class="stat small">সময়: <span id="time">15</span>s</div>
+      </div>
+    </header>
+
+    <main class="card quiz-container">
+      <div id="stats" class="stats-row">
+        <div class="stat">✅ সঠিক: <strong id="stat-correct">0</strong></div>
+        <div class="stat">❌ ভুল: <strong id="stat-wrong">0</strong></div>
+        <div class="stat">🔢 পয়েন্ট: <strong id="stat-score">0</strong></div>
+        <div class="stat">💰 কয়েন: <strong id="stat-coins">0</strong></div>
+      </div>
+
+      <div class="question-box">
+        <div id="question" class="question-text">প্রশ্ন লোড হচ্ছে...</div>
+        <div id="options" class="options-grid"></div>
+      </div>
+
+      <div class="controls">
+        <div class="progress">প্রশ্ন <span id="qIndex">0</span>/<span id="qTotal2">0</span></div>
+        <button id="skipBtn" class="btn yellow">Skip ⏭</button>
+      </div>
+    </main>
+
+    <div id="result-screen" class="modal hidden">
+      <div class="modal-card">
+        <h2>🎯 গেম শেষ!</h2>
+        <p>সঠিক: <strong id="final-correct">0</strong></p>
+        <p>ভুল: <strong id="final-wrong">0</strong></p>
+        <p>মোট পয়েন্ট: <strong id="final-score">0</strong></p>
+        <p>আর্জিত কয়েন: <strong id="final-coins">0</strong></p>
+        <p>সর্বোচ্চ স্কোর (Local): <strong id="bestScore">0</strong></p>
+        <div style="margin-top:14px;">
+          <button id="playAgain" class="btn yellow">🔁 আবার খেলুন</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <small>সাউন্ড: sounds/ মধ্যে correct.mp3, wrong.mp3, click.mp3 রাখুন।</small>
+    </footer>
+  </div>
+
+  <!-- Load questions first -->
+  <script src="questions.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
