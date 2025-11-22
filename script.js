@@ -235,3 +235,39 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
   startGame();
 });
+<script src="script.js" defer></script>
+
+  <!-- ↓↓↓ Add Firebase SDK Below ↓↓↓ -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+
+  <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBFbfVCHzWS9ZfsI_R7G5L95lIdsaAjqhM",
+    authDomain: "membership-007.firebaseapp.com",
+    projectId: "membership-007",
+    storageBucket: "membership-007.firebasestorage.app",
+    messagingSenderId: "260769258496",
+    appId: "1:260769258496:web:948c596e84f14c0c7f4ce5",
+    measurementId: "G-PHW10NPS0B"
+  };
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.getAuth(app);
+  const db = firebase.getFirestore(app);
+
+  async function googleLogin() {
+    const provider = new firebase.GoogleAuthProvider();
+    const result = await firebase.signInWithPopup(auth, provider);
+    alert("Logged in as " + result.user.displayName);
+  }
+
+  function logout() {
+    firebase.signOut(auth);
+    alert("Logged out");
+  }
+  </script>
+
+</body>
+</html>
